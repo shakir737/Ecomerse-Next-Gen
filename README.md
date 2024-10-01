@@ -1,1 +1,1 @@
-# Ecomerse-Next-Gen
+# Ecomerse Next Generation Application
