@@ -145,7 +145,7 @@ const OrderList = ({ orders }) => {
   });
   return (
     <div className="w-full px-10">
-      <div className="flex items-center py-4">
+      {/* <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
           value={table.getColumn("email")?.getFilterValue() ?? ""}
@@ -254,7 +254,7 @@ const OrderList = ({ orders }) => {
             Next
           </Button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
