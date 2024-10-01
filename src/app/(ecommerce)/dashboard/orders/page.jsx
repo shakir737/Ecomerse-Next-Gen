@@ -11,7 +11,7 @@ const Orders = async () => {
 
   return (
     <>
-      <div></div>
+      <div>orders page</div>
     </>
   );
 };
