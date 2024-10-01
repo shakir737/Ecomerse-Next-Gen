@@ -5,28 +5,28 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Addtocart = () => {
-  const { cart } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  // const { cart } = useSelector((state) => state.auth);
+  // const dispatch = useDispatch();
 
   const removeItem = (id) => {
-    const updateCart = cart?.filter((item) => item.product.id !== id);
-    dispatch(setCart(updateCart));
+    // const updateCart = cart?.filter((item) => item.product.id !== id);
+    // dispatch(setCart(updateCart));
   };
 
   const updateQuantity = (id, qty) => {
-    const update = cart?.map((item) => {
-      if (item.product.id === id) {
-        return { ...item, quantity: qty };
-      }
-      return item;
-    });
-    dispatch(setCart(update));
+    // const update = cart?.map((item) => {
+    //   if (item.product.id === id) {
+    //     return { ...item, quantity: qty };
+    //   }
+    //   return item;
+    // });
+    // dispatch(setCart(update));
   };
   const totalPrice = () => {
-    return cart?.reduce(
-      (total, item) => total + item.product.price * item.quantity,
-      0
-    );
+    // return cart?.reduce(
+    //   (total, item) => total + item.product.price * item.quantity,
+    //   0
+    // );
   };
 
   return (
@@ -35,7 +35,7 @@ const Addtocart = () => {
         <div className="w-3/4 bg-white p-10">
           <div className="flex justify-between border-b pb-8 font-semibold text-2xl">
             <h1>Shopping cart</h1>
-            <h2>{cart?.length} Items</h2>
+            {/* <h2>{cart?.length} Items</h2> */}
           </div>
           <div className="flex mt-10 mb-5 ">
             <h3 className="font-semibold text-center text-xs uppercase w-2/5">
@@ -51,7 +51,7 @@ const Addtocart = () => {
               Total
             </h3>
           </div>
-          {cart?.map((item, index) => (
+          {/* {cart?.map((item, index) => (
             <div
               key={index}
               className="flex items-center hover:bg-gray-100 px-6 py-5"
@@ -97,7 +97,7 @@ const Addtocart = () => {
                 ${item?.product?.price * item?.quantity}
               </span>
             </div>
-          ))}
+          ))} */}
         </div>
         <div>
           <h1 className="font-semibold text-2xl border-b pb-8">
@@ -105,13 +105,13 @@ const Addtocart = () => {
           </h1>
           <div className="flex justify-between mt-10 mb-5">
             <span className="font-semibold text-sm uppercase ">
-              Items {cart?.length}
+              {/* Items {cart?.length} */}
             </span>
-            <span className="font-semibold text-sm">{totalPrice()}$</span>
+            {/* <span className="font-semibold text-sm">{totalPrice()}$</span> */}
           </div>
           <div>
             <span className="font-medium inline-block mb-3 text-sm uppercase">
-              Shipping
+              {/* Shipping */}
             </span>
             <select className="block p-2 text-gray-600 w-full text-sm" id="">
               <option value="Standard shipping - $10.00"></option>
@@ -120,10 +120,10 @@ const Addtocart = () => {
           <div>
             <div className="flex font-semibold justify-between py-6 text-sm uppercase">
               <span>Total Cost</span>
-              <span>${totalPrice() + 10}</span>
+              {/* <span>${totalPrice() + 10}</span> */}
             </div>
             <div className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-white uppercase w-full p-2 rounded-md">
-              <AddAddress />
+              {/* <AddAddress /> */}
             </div>
           </div>
         </div>
