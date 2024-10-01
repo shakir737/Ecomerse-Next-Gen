@@ -9,12 +9,12 @@ const Addtocart = () => {
   const dispatch = useDispatch();
 
   const removeItem = (id) => {
-    const updateCart = cart.filter((item) => item.product.id !== id);
+    const updateCart = cart?.filter((item) => item.product.id !== id);
     dispatch(setCart(updateCart));
   };
 
   const updateQuantity = (id, qty) => {
-    const update = cart.map((item) => {
+    const update = cart?.map((item) => {
       if (item.product.id === id) {
         return { ...item, quantity: qty };
       }
@@ -23,7 +23,7 @@ const Addtocart = () => {
     dispatch(setCart(update));
   };
   const totalPrice = () => {
-    return cart.reduce(
+    return cart?.reduce(
       (total, item) => total + item.product.price * item.quantity,
       0
     );
@@ -66,12 +66,12 @@ const Addtocart = () => {
                 </div>
                 <div className="flex flex-col justify-between ml-4 flex-grow">
                   <span className="font-bold text-sm">
-                    {item?.product.name}
+                    {item?.product?.name}
                   </span>
                   <span className="text-red-500 text-xs">Apple</span>
                   <span
                     className="cursor-pointer font-semibold hover:text-red-500 text-gray-500 text-xs"
-                    onClick={() => removeItem(item.product.id)}
+                    onClick={() => removeItem(item?.product.id)}
                   >
                     Remove
                   </span>
@@ -81,20 +81,20 @@ const Addtocart = () => {
                 <input
                   type="text"
                   className="mx-2 border text-center"
-                  value={item.quantity}
+                  value={item?.quantity}
                   onChange={(event) =>
                     updateQuantity(
-                      item.product.id,
-                      parseInt(event.target.value)
+                      item?.product.id,
+                      parseInt(event?.target?.value)
                     )
                   }
                 />
               </div>
               <span className="text-center w-1/5 font-semibold text-sm">
-                ${item.product.price}
+                ${item?.product?.price}
               </span>
               <span className="text-center w-1/5 font-semibold text-sm">
-                ${item.product.price * item.quantity}
+                ${item?.product?.price * item?.quantity}
               </span>
             </div>
           ))}
