@@ -39,11 +39,9 @@ const Login = () => {
         toast({ title: "You Are Successfully Logged In" });
         router.push("/");
       } else {
-        console.log(false);
         toast({ title: "Logged In Failled" });
       }
     } catch (error) {
-      
       toast({ title: "Logged In Failled" });
     }
   };
@@ -116,7 +114,6 @@ const Login = () => {
               <form
                 action={async () => {
                   const result = await signIn("google");
-                  console.log(result);
                 }}
               >
                 <Button

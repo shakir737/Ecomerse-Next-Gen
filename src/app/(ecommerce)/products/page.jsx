@@ -11,7 +11,7 @@ const Products = async ({ searchParams }) => {
   } else {
     result = await prisma.product.findMany();
   }
-  console.log(result);
+
   return (
     <div className="px-[10%]">
       <Fashsales

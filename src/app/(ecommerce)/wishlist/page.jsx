@@ -10,7 +10,6 @@ const WishlistPage = async () => {
     prisma.product.findMany({ take: 6, skip: 0, orderBy: { views: "desc" } }),
   ]);
 
-  console.log(wishlist);
   return (
     <div className="px-[10%]">
       <Fashsales

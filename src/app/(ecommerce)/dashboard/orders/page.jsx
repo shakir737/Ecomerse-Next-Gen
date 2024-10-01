@@ -8,7 +8,7 @@ const Orders = async () => {
     skip: 0,
     include: { OrderItem: { include: { product: true } }, addressInfo: true },
   });
-  console.log(orders, "orders");
+
   return <OrderList orders={orders} />;
 };
 
