@@ -9,7 +9,11 @@ const Orders = async () => {
   //   include: { OrderItem: { include: { product: true } }, addressInfo: true },
   // });
 
-  return <div></div>;
+  return (
+    <>
+      <div></div>
+    </>
+  );
 };
 
 export default Orders;
