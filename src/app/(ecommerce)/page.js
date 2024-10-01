@@ -12,12 +12,12 @@ export default async function Home() {
     take: 6,
     skip: 0,
   };
-  const categories = await prisma.category.findMany(query);
-  const popularProducts = await prisma.product.findMany({
+  const categories = await prisma?.category?.findMany(query);
+  const popularProducts = await prisma?.product?.findMany({
     ...query,
     orderBy: { views: "desc" },
   });
-  const products = await prisma.product.findMany(query);
+  const products = await prisma?.product?.findMany(query);
 
   return (
     <div className="">
