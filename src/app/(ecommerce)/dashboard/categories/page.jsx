@@ -1,4 +1,5 @@
 import AdminCategories from "@/components/AdminCategories";
+import prisma from "@/utils/connection";
 import React from "react";
 
 const Categories = async () => {
