@@ -24,7 +24,6 @@ const CreateUpdateCat = ({ children, category }) => {
   }, []);
 
   const handleSubmit = async (formData) => {
-    console.log("data");
     const result = await CreateCategory(formData, image, category?.id);
     if (result?.result) {
       toast({ title: "Category created successfully" });

@@ -62,7 +62,6 @@ export const columns = [
       );
     },
     cell: ({ row }) => {
-      console.log(row?.original?.image);
       return <img src={row?.original?.image} className="w-20 h-20" />;
     },
   },

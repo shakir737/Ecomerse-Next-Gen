@@ -14,7 +14,6 @@ import { logout } from "@/utils/actions";
 
 const Sesion = () => {
   const { data: session, status } = useSession();
-  console.log(session);
 
   return (
     <div className="flex items-center gap-4">

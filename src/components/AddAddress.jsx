@@ -19,7 +19,6 @@ const AddAddress = () => {
   const router = useRouter();
   const { cart } = useSelector((state) => state.auth);
   const submit = async (formData) => {
-    console.log(formData, "cart");
     const response = await createOrder(formData, cart);
     if (response.error) {
       toast({ title: response.error });
