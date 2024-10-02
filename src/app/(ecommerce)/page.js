@@ -23,19 +23,27 @@ export default async function Home() {
     <div className="">
       <Carousels />
       <div className="px-[10%]">
-        <Fashsales title="Today's" heading="Flash sales" products={products} />
+        {products ? (
+          <Fashsales
+            title="Today's"
+            heading="Flash sales"
+            products={products}
+          />
+        ) : (
+          <div></div>
+        )}
 
         <Separator className="my-4" />
-        <CategoryList categories={categories} />
+        {/* <CategoryList categories={categories} /> */}
 
         <Enhancement />
         <Separator className="my-4" />
 
-        <Fashsales
+        {/* <Fashsales
           title="Our Products"
           heading="Explore Our Products"
           products={popularProducts}
-        />
+        /> */}
 
         <Featured />
       </div>
