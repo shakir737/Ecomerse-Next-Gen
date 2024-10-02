@@ -8,22 +8,22 @@ export default async function Home() {
   const Carousels = dynamic(() => import("@/components/Carousels"));
   const Featured = dynamic(() => import("@/components/Featured"));
   const Enhancement = dynamic(() => import("@/components/Enhancement"));
-  const query = {
-    take: 6,
-    skip: 0,
-  };
-  const categories = await prisma?.category.findMany(query);
-  const popularProducts = await prisma?.product.findMany({
-    ...query,
-    orderBy: { views: "desc" },
-  });
-  const products = await prisma?.product.findMany(query);
+  // const query = {
+  //   take: 6,
+  //   skip: 0,
+  // };
+  // const categories = await prisma?.category.findMany(query);
+  // const popularProducts = await prisma?.product.findMany({
+  //   ...query,
+  //   orderBy: { views: "desc" },
+  // });
+  // const products = await prisma?.product.findMany(query);
 
   return (
     <div className="">
-      <Carousels />
+      {/* <Carousels /> */}
       <div className="px-[10%]">
-        {products ? (
+        {/* {products ? (
           <Fashsales
             title="Today's"
             heading="Flash sales"
@@ -31,11 +31,11 @@ export default async function Home() {
           />
         ) : (
           <div></div>
-        )}
-        <Separator className="my-4" />
+        )} */}
+        {/* <Separator className="my-4" /> */}
         {/* <CategoryList categories={categories} /> */}
-        <Enhancement />
-        <Separator className="my-4" />
+        {/* <Enhancement /> */}
+        {/* <Separator className="my-4" /> */}
 
         {/* <Fashsales
           title="Our Products"
@@ -43,7 +43,7 @@ export default async function Home() {
           products={popularProducts}
         /> */}
 
-        <Featured />
+        {/* <Featured /> */}
       </div>
     </div>
   );
