@@ -32,10 +32,8 @@ export default async function Home() {
         ) : (
           <div></div>
         )}
-
         <Separator className="my-4" />
         {/* <CategoryList categories={categories} /> */}
-
         <Enhancement />
         <Separator className="my-4" />
 
