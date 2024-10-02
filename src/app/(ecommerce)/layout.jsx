@@ -5,12 +5,10 @@ import prisma from "@/utils/connection";
 import React from "react";
 
 const EcommerceLayout = async ({ children }) => {
-  const categories = await prisma?.category?.findMany();
-
   return (
     <div>
       <Toaster />
-      <Header categories={categories} />
+      <Header />
       {children}
     </div>
   );
