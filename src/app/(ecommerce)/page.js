@@ -1,13 +1,13 @@
-import CategoryList from "@/components/CategoryList";
-import { Separator } from "@/components/ui/separator";
-import prisma from "@/utils/connection";
+// import CategoryList from "@/components/CategoryList";
+// import { Separator } from "@/components/ui/separator";
+// import prisma from "@/utils/connection";
 
-export default async function Home() {
-  const dynamic = (await import("next/dynamic")).default;
-  const Fashsales = dynamic(() => import("@/components/Fashsales"));
-  const Carousels = dynamic(() => import("@/components/Carousels"));
-  const Featured = dynamic(() => import("@/components/Featured"));
-  const Enhancement = dynamic(() => import("@/components/Enhancement"));
+const Home = () => {
+  // const dynamic = (await import("next/dynamic")).default;
+  // const Fashsales = dynamic(() => import("@/components/Fashsales"));
+  // const Carousels = dynamic(() => import("@/components/Carousels"));
+  // const Featured = dynamic(() => import("@/components/Featured"));
+  // const Enhancement = dynamic(() => import("@/components/Enhancement"));
   // const query = {
   //   take: 6,
   //   skip: 0,
@@ -47,4 +47,5 @@ export default async function Home() {
       </div>
     </div>
   );
-}
+};
+export default Home;
