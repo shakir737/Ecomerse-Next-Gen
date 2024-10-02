@@ -60,6 +60,7 @@ const Login = () => {
               >
                 Your email
               </label>
+
               <input
                 {...register("email", { required: true })}
                 type="email"
