@@ -11,7 +11,9 @@ export default async function RootLayout({ children }) {
     <Providers>
       <html lang="en">
         <body className={inter.className}>
-          <Header />
+          <div>
+            <Header />
+          </div>
           <ReduxProvider>{children}</ReduxProvider>
         </body>
       </html>
