@@ -21,6 +21,7 @@ const Home = () => {
 
   return (
     <div className="">
+      Home Page
       {/* <Carousels /> */}
       <div className="px-[10%]">
         {/* {products ? (
