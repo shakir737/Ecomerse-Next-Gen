@@ -7,11 +7,11 @@ import { register } from "@/utils/actions";
 import React, { useState } from "react";
 
 const Signup = () => {
-  const [image, setImage] = useState("");
+  // const [image, setImage] = useState("");
   const onSubmit = async (formData) => {
     console.log(formData);
 
-    const res = await register(formData, image);
+    const res = await register(formData);
     if (res?.error) {
       toast({ title: res.error });
     } else toast({ title: res.message });
@@ -46,7 +46,7 @@ const Signup = () => {
               type="password"
               className="h-10 mb-10"
             />
-            <UploadButton
+            {/* <UploadButton
               endpoint="imageUploader"
               appearance={{
                 button:
@@ -59,7 +59,7 @@ const Signup = () => {
               onUploadError={(error) => {
                 alert(`ERROR ${error.message}`);
               }}
-            />
+            /> */}
             <FormSubmit className="w-full bg-red-500 text-white h-12 hover:bg-red-400 mt-10">
               Create
             </FormSubmit>

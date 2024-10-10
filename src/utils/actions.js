@@ -22,7 +22,7 @@ function generateToken(length) {
 let token = generateToken(32);
 
 let hashedPassword;
-export const register = async (formData, image) => {
+export const register = async (formData) => {
   const name = formData.get("name");
   const email = formData.get("email");
   const password = formData.get("password");
@@ -43,7 +43,7 @@ export const register = async (formData, image) => {
 
   const newUser = await prisma?.user.upsert({
     where: { email },
-    create: { name, email, password: hashedPassword, token, image },
+    create: { name, email, password: hashedPassword, token },
     update: { token },
   });
 
