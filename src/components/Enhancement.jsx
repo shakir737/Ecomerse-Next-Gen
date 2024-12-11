@@ -2,7 +2,7 @@ import { staticTime } from "@/utils/data";
 import React from "react";
 import { Button } from "./ui/button";
 
-const Enhancement = () => {
+const Enhancement = async () => {
   return (
     <div className="mt-10 bg-black grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0 p-10">
       <div className="flex flex-col justify-center gap-5">

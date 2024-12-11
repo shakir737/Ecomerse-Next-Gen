@@ -7,12 +7,6 @@ import Credentials from "next-auth/providers/credentials";
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,
-  session: {
-    strategy: "jwt",
-  },
-  pages: {
-    signIn: "/login",
-  },
   providers: [
     Credentials({
       name: "Credentials",
@@ -93,5 +87,12 @@ export const authOptions = {
       }
       return token;
     },
+  },
+  session: {
+    strategy: "jwt",
+    maxAge: 1 * 60 * 60,
+  },
+  pages: {
+    signIn: "/login",
   },
 };

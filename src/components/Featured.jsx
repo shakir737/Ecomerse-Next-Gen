@@ -2,7 +2,7 @@ import React from "react";
 import Title from "./Title";
 import { Button } from "./ui/button";
 
-const Featured = () => {
+const Featured = async () => {
   return (
     <div>
       <Title title="Featured" heading="New Arrival" />

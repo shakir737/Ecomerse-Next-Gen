@@ -4,8 +4,7 @@ import prisma from "./connection";
 import sendEmail from "@/services/sendEmail";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { signIn } from "next-auth/react";
-import { AuthError } from "next-auth";
+import { signIn, signOut } from "next-auth/react";
 
 function generateToken(length) {
   let result = "";
@@ -157,7 +156,6 @@ export const deleteFunction = async ({ id, table }) => {
 
 // logout
 export const logout = async () => {
-  const session = await getSession();
-  session.destroy();
-  redirect("/login");
+  await signOut();
+  redirect('/');
 };

@@ -1,7 +1,6 @@
-"use client";
 import { GanttChart, Heart, LayoutDashboard, ShoppingCart } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { useSession } from "next-auth/react";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
 import {
@@ -10,14 +9,14 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "./ui/separator";
-import { logout } from "@/utils/actions";
+import Logout from "./Logout";
 
-const Sesion = () => {
-  const { data: session, status } = useSession();
+const Sesion = (props) => {
+  const { user } = props;
 
   return (
     <div className="flex items-center gap-4">
-      {status === "authenticated" ? (
+      {user ? (
         <>
           <Link href="/wishlist">
             <Heart size={20} />
@@ -28,34 +27,24 @@ const Sesion = () => {
           <Popover>
             <PopoverTrigger asChild>
               <Avatar>
-                <AvatarImage
-                  src={session?.user?.image}
-                  alt={session?.user?.name}
-                />
+                <AvatarImage src={user?.image} alt={user?.name} />
                 <AvatarFallback>
-                  {session?.user?.name?.[0]?.toUpperCase()}
+                  {user?.name?.[0]?.toUpperCase()}
                 </AvatarFallback>
               </Avatar>
             </PopoverTrigger>
             <PopoverContent className="w-60">
               <div className="grid gap-4">
                 <div className="space-y-2">
-                  <h4 className="font-medium leading-none">
-                    {session?.user?.name}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {session?.user?.email}
-                  </p>
+                  <h4 className="font-medium leading-none">{user?.name}</h4>
+                  <p className="text-sm text-muted-foreground">{user?.email}</p>
                   <Separator className="my-4" />
                   <Link href="/dashboard" className="flex items-center gap-2">
                     <LayoutDashboard size={20} /> <span>Dashboard</span>
                   </Link>
                   <Separator className="my-4" />
-                  <form action={logout}>
-                    <button className="cursor-pointer border-none outline-none flex items-center gap-2">
-                      Logout
-                    </button>
-                  </form>
+
+                  <Logout />
                 </div>
               </div>
             </PopoverContent>

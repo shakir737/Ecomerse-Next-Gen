@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import Link from "next/link";
 
-const CategoryList = ({ categories }) => {
+const CategoryList = async ({ categories }) => {
   return (
     <div>
       <Title title="Categoriess" heading="Browse By Category" />

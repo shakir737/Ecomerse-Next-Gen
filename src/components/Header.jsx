@@ -14,10 +14,13 @@ import { Separator } from "./ui/separator";
 import { logout } from "@/utils/actions";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { getSession } from "next-auth/react";
 import Sesion from "./session";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/authOptions";
 
 export default async function Header() {
+  const session = await getServerSession(authOptions);
+  const user = session?.user;
   return (
     <div>
       <Navbar />
@@ -52,7 +55,7 @@ export default async function Header() {
           <div className="hidden sm:block"></div>
         </div>
 
-        <Sesion />
+        <Sesion user={user} />
       </div>
     </div>
   );
