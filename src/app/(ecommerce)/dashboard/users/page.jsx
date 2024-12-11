@@ -4,8 +4,8 @@ import React from "react";
 
 const Users = async () => {
   const users = await prisma.user.findMany();
-  console.log(users, "users");
-  return <UserList users={users} />;
+
+  return <div>{users && <UserList users={users} />}</div>;
 };
 
 export default Users;

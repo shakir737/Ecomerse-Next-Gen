@@ -1,6 +1,6 @@
 import AdminCategories from "@/components/AdminCategories";
 import React from "react";
-
+import prisma from "@/utils/connection";
 const Categories = async () => {
   const query = {
     take: 10,
