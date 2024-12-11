@@ -14,11 +14,13 @@ const Products = async ({ searchParams }) => {
   console.log(result);
   return (
     <div className="px-[10%]">
-      <Fashsales
-        title="Products By Category"
-        heading="Explore Our Products"
-        products={result}
-      />
+      {result && (
+        <Fashsales
+          title="Products By Category"
+          heading="Explore Our Products"
+          products={result}
+        />
+      )}
     </div>
   );
 };

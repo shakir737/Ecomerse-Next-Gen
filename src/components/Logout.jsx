@@ -4,17 +4,17 @@ import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 const Logout = () => {
   const router = useRouter();
-  async function handleLogout() {
+  const handleLogout = async () => {
     await signOut();
     router.push("/");
-  }
+  };
   return (
     <div>
       <button
-        onclick={handleLogout}
+        onClick={handleLogout}
         className="cursor-pointer border-none outline-none flex items-center gap-2"
       >
-        Logout
+        Sign out
       </button>
     </div>
   );

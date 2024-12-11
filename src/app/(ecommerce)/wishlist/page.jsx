@@ -12,16 +12,20 @@ const WishlistPage = async () => {
   console.log(wishlist);
   return (
     <div className="px-[10%]">
-      <Fashsales
-        title="Wishlist"
-        heading="Your all favorite products"
-        products={wishlist}
-      />
-      <Fashsales
-        title="Popular products"
-        heading="Most popular products"
-        products={popularProducts}
-      />
+      {wishlist && (
+        <Fashsales
+          title="Wishlist"
+          heading="Your all favorite products"
+          products={wishlist}
+        />
+      )}
+      {popularProducts && (
+        <Fashsales
+          title="Popular products"
+          heading="Most popular products"
+          products={popularProducts}
+        />
+      )}
     </div>
   );
 };

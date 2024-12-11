@@ -11,7 +11,7 @@ const Categories = async () => {
 
   return (
     <div className="w-full flex flex-col min-h-screen mx-2 md:mx-12">
-      <AdminCategories CatList={CatList} />
+      {CatList && <AdminCategories CatList={CatList} />}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import "./globals.css";
 import ReduxProvider from "@/redux/provider";
 import Providers from "@/provider/Providers";
 import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,10 @@ export default async function RootLayout({ children }) {
           <div>
             <Header />
           </div>
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            <Toaster />
+            {children}
+          </ReduxProvider>
         </body>
       </html>
     </Providers>

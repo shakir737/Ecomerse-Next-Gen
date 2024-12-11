@@ -12,7 +12,7 @@ const Products = async () => {
 
   return (
     <div className="w-full flex flex-col min-h-screen mx-2 md:mx-12">
-      <ProductList prodList={prodList} />
+      {prodList && <ProductList prodList={prodList} />}
     </div>
   );
 };
